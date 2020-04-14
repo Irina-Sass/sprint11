@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button class="user-info__edit">Edit</button>
+        </div>
+        <button class="button user-info__button">+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+
+      <!-- Пример вёрстки карточки: 
+
+      <div class="place-card">
+        <div class="place-card__image" style="background-image: url(https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg)">
+          <button class="place-card__delete-icon"></button>
+        </div>
+        <div class="place-card__description">
+          <h3 class="place-card__name">Камчатка</h3>
+          <button class="place-card__like-icon"></button>
+        </div>
+      </div>
+
+      конец примера. -->
+
+    </div>
+    <div id="addPhotoPopup" class="popup">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close">
+        <h3 class="popup__title">Новое место</h3>
+        <form id="formPhoto" class="popup__form" name="new" novalidate>
+            <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" required minlength="2" maxlength="30">
+            <span class="error" aria-live="polite"></span>
+            <input type="url" name="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку" required>
+            <span class="error" aria-live="polite"></span>
+            <button type = "submit" class="button popup__button">+</button>
+        </form>
+      </div>
+    </div>
+    <div id="editProfilePopup" class="popup">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form id="formEdit" class="popup__form" name="edit" novalidate>
+            <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Имя" required minlength="2" maxlength="30">
+            <span class="error" aria-live="polite"></span>
+            <input type="text" name="job" class="popup__input popup__input_type_link-url" placeholder="О себе" required minlength="2" maxlength="30">
+            <span class="error" aria-live="polite"></span>
+            <button type = "submit" class="button popup__button popup__button_active popup__button_font-size_small">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div id="editАvatar" class="popup">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close">
+        <h3 class="popup__title">Обновить аватар</h3>
+        <form id="formAvatar" class="popup__form" novalidate>
+            <input type="url" name="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на аватар" required>
+            <span class="error" aria-live="polite"></span>
+            <button type class="button popup__button popup__button_active popup__button_font-size_small">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div id="popupImage" class="popup">
+        <div class="popup__wrapper">
+          <img class="popup__image">
+          <img src="./images/close.svg" alt="" class="popup__close">
+        </div>        
+    </div>
+  </div>
+  <script src="js/Api.js"></script> 
+  <script src="js/Card.js"></script> 
+  <script src="js/CardList.js"></script> 
+  <script src="js/Popup.js"></script> 
+  <script src="js/UserInfo.js"></script> 
+  <script src="js/PopupImage.js"></script> 
+  <script src="js/NewCard.js"></script>
+  <script src="js/Avatar.js"></script> 
+  <script src="js/FormValidator.js"></script>   
+  <script src='js/script.js'></script>
+</body>
+</html>

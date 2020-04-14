@@ -1,0 +1,32 @@
+.user-info__photo {
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  position: relative;  
+}
+
+.user-info__photo::before {
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;  
+  position: absolute;
+  opacity: 0;  
+}
+ 
+.user-info__photo:hover.user-info__photo::before {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 980px) {
+  .user-info__photo {
+    margin-top: 40px;
+  }
+}
