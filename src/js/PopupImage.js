@@ -1,4 +1,5 @@
-class PopupImage extends Popup {
+import {Popup} from './Popup.js';
+export class PopupImage extends Popup {
     constructor(elem) {
       super(elem);                 
     }
