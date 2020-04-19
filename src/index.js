@@ -8,7 +8,6 @@ import {NewCard} from './js/NewCard.js';
 import {Avatar} from './js/Avatar.js';
 import {FormValidator} from './js/FormValidator.js';
 
-
 (function () {
   const buttonAddPhoto = document.querySelector('.user-info__button');
   const buttonEdit = document.querySelector('.user-info__edit');
@@ -20,7 +19,6 @@ import {FormValidator} from './js/FormValidator.js';
   const formEdit = editProfilePopup.querySelector('#formEdit');
   const formPhoto = addPhotoPopup.querySelector('#formPhoto');
   const formAvatar = editAvatarPopup.querySelector('#formAvatar');
-
 
   const api = new Api( {
     baseUrl: 'https://praktikum.tk/cohort9',
@@ -88,6 +86,3 @@ import {FormValidator} from './js/FormValidator.js';
     avatarFormValidator.setSubmitButtonState();
   })
 })();
-
-
-
