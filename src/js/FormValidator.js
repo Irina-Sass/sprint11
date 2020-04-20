@@ -1,4 +1,4 @@
-class FormValidator {
+export class FormValidator {
   constructor(form, buttonSubmit) {
     this.form = form;
     this.buttonSubmit = buttonSubmit;

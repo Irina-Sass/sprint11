@@ -1,4 +1,5 @@
-class Avatar extends Popup {
+import {Popup} from './Popup.js';
+export class Avatar extends Popup {
     constructor(elem, form, api, userInfo) {
         super(elem);
         this.form = form;

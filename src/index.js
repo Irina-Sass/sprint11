@@ -1,3 +1,13 @@
+import "./pages/index.css";
+import {Api} from './js/Api.js';
+import {Card} from './js/Card.js';
+import {CardList} from './js/CardList.js';
+import {UserInfo} from './js/UserInfo.js';
+import {PopupImage} from './js/PopupImage.js';
+import {NewCard} from './js/NewCard.js';
+import {Avatar} from './js/Avatar.js';
+import {FormValidator} from './js/FormValidator.js';
+
 (function () {
   const buttonAddPhoto = document.querySelector('.user-info__button');
   const buttonEdit = document.querySelector('.user-info__edit');
@@ -9,7 +19,6 @@
   const formEdit = editProfilePopup.querySelector('#formEdit');
   const formPhoto = addPhotoPopup.querySelector('#formPhoto');
   const formAvatar = editAvatarPopup.querySelector('#formAvatar');
-
 
   const api = new Api( {
     baseUrl: 'https://praktikum.tk/cohort9',
@@ -77,19 +86,3 @@
     avatarFormValidator.setSubmitButtonState();
   })
 })();
-
-
-
-/**REVIEW** Резюме.
- * Очень хорошая работа.
- *
- * Методы класса Api имеют правильную структуру.
- * Обработка ответов сервера происходит вне класса Api методами других классов приложения.
- *
- * Выполнены все дополнительные задания в полном объёме. Молодец!
- *
- *
- * Задание принято!
- *
- *
- */
