@@ -24,7 +24,12 @@ module.exports = {
                 test: /\.css$/i,
                 use: [
                     (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                    'css-loader',
+                    {
+                        loader:'css-loader',
+                        options: {
+                            importLoaders: 2
+                        }
+                    },                   
                     'postcss-loader'
                 ]
             },
@@ -34,7 +39,10 @@ module.exports = {
                     'file-loader?name=./images/[name].[ext]', // указали папку, куда складывать изображения
                     {
                         loader: 'image-webpack-loader',
-                        options: {}
+                        options: {
+                            bypassOnDebug: true, // webpack@1.x
+                            disable: true, // webpack@2.x and newer
+                        },
                     },
                 ]
             },

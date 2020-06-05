@@ -1,5 +1,5 @@
 {
-  "name": "sprint11",
+  "name": "Mesto",
   "version": "0.1.1",
   "description": "Галерея фотографий с возможностью добавлять, удалять, лайкать фотографии. Версия 0.1.1",
   "main": "src/index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Irina-Sass/sprint11.git"
+    "url": "git+https://github.com/Irina-Sass/Mesto.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Irina-Sass/sprint11/issues"
+    "url": "https://github.com/Irina-Sass/Mesto/issues"
   },
-  "homepage": "https://github.com/Irina-Sass/sprint11#readme",
+  "homepage": "https://github.com/Irina-Sass/Mesto#readme",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
