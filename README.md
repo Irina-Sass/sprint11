@@ -1,6 +1,6 @@
-# sprint11
+# Mesto
 
-https://irina-sass.github.io/sprint11/
+https://irina-sass.github.io/Mesto/
 
 ## Версия проекта
 
