@@ -1,12 +1,12 @@
-import "./pages/index.css";
-import {Api} from './js/Api.js';
-import {Card} from './js/Card.js';
-import {CardList} from './js/CardList.js';
-import {UserInfo} from './js/UserInfo.js';
-import {PopupImage} from './js/PopupImage.js';
-import {NewCard} from './js/NewCard.js';
-import {Avatar} from './js/Avatar.js';
-import {FormValidator} from './js/FormValidator.js';
+import './pages/index.css';
+import { Api } from './js/Api.js';
+import { Card } from './js/Card.js';
+import { CardList } from './js/CardList.js';
+import { UserInfo } from './js/UserInfo.js';
+import { PopupImage } from './js/PopupImage.js';
+import { NewCard } from './js/NewCard.js';
+import { Avatar } from './js/Avatar.js';
+import { FormValidator } from './js/FormValidator.js';
 
 (function () {
   const buttonAddPhoto = document.querySelector('.user-info__button');
@@ -20,24 +20,33 @@ import {FormValidator} from './js/FormValidator.js';
   const formPhoto = addPhotoPopup.querySelector('#formPhoto');
   const formAvatar = editAvatarPopup.querySelector('#formAvatar');
 
-  const api = new Api( {
-    baseUrl: 'https://praktikum.tk/cohort9',
+  const api = new Api({
+    baseUrl: ' https://nomoreparties.co/cohort9',
     headers: {
       authorization: '9340f3e9-bf69-4b19-82a3-fbaa33808c0f',
-      'Content-Type': 'application/json'
-    }
-  })
+      'Content-Type': 'application/json',
+    },
+  });
   const userInfo = new UserInfo({
     elem: editProfilePopup,
     form: formEdit,
     userInfoName: document.querySelector('.user-info__name'),
     userInfoJob: document.querySelector('.user-info__job'),
     userInfoPhoto: document.querySelector('.user-info__photo'),
-    api
+    api,
   });
   const createCard = (name, link, id, userId, likes, numberLikes) => {
-    const cardElem = new Card(name, link, id, userId, likes, numberLikes, userInfo, api);
-    const card = cardElem.create()
+    const cardElem = new Card(
+      name,
+      link,
+      id,
+      userId,
+      likes,
+      numberLikes,
+      userInfo,
+      api
+    );
+    const card = cardElem.create();
     return card;
   };
   const cardList = new CardList(placesList, createCard, api);
@@ -46,22 +55,28 @@ import {FormValidator} from './js/FormValidator.js';
     form: formPhoto,
     cardList,
     createCard,
-    api
+    api,
   });
   const popupImage = new PopupImage(document.querySelector('#popupImage'));
   const avatar = new Avatar(editAvatarPopup, formAvatar, api, userInfo);
-    const editFormValidator = new FormValidator(formEdit, formEdit.querySelector('.popup__button'));
-  const photoFormValidator = new FormValidator(formPhoto, formPhoto.querySelector('.popup__button'));
-  const avatarFormValidator = new FormValidator(formAvatar, formAvatar.querySelector('.popup__button'));
+  const editFormValidator = new FormValidator(
+    formEdit,
+    formEdit.querySelector('.popup__button')
+  );
+  const photoFormValidator = new FormValidator(
+    formPhoto,
+    formPhoto.querySelector('.popup__button')
+  );
+  const avatarFormValidator = new FormValidator(
+    formAvatar,
+    formAvatar.querySelector('.popup__button')
+  );
 
-
-  api.getInitialCards()
-  .then(data => {
+  api.getInitialCards().then((data) => {
     cardList.setCards(data);
     cardList.render();
   });
-  api.getUserData()
-  .then(data => {
+  api.getUserData().then((data) => {
     userInfo.setUserData(data);
     userInfo.renderUserData();
   });
@@ -84,5 +99,5 @@ import {FormValidator} from './js/FormValidator.js';
   buttonAvatar.addEventListener('click', () => {
     avatar.open();
     avatarFormValidator.setSubmitButtonState();
-  })
+  });
 })();
